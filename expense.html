@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Expense Tracker — Add Expense</title><link rel="stylesheet" href="css/style.css"></head><body class="app-page">
+<aside class="sidebar">
+  <a class="side-brand" href="user-dashboard.html"><span class="brand-mark">ET</span><span>Expense<br>Tracker</span></a>
+  <nav>
+    <a href="user-dashboard.html" class="nav-item" data-page="dashboard"><span>⌂</span> Overview</a>
+    <a href="income.html" class="nav-item" data-page="income"><span>＋</span> Income</a>
+    <a href="expense.html" class="nav-item" data-page="expense"><span>−</span> Expenses</a>
+    <a href="transactions.html" class="nav-item" data-page="transactions"><span>≡</span> Transactions</a>
+    <a href="budgets.html" class="nav-item" data-page="budgets"><span>◈</span> Budgets</a>
+    <a href="accounts.html" class="nav-item" data-page="accounts"><span>▣</span> Accounts</a>
+    <a href="recurring.html" class="nav-item" data-page="recurring"><span>↻</span> Recurring</a>
+    <a href="reports.html" class="nav-item" data-page="reports"><span>▤</span> Reports</a>
+    <a href="goals.html" class="nav-item" data-page="goals"><span>☆</span> Goals</a>
+    <a href="profile.html" class="nav-item" data-page="profile"><span>◯</span> Profile</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="mini-help"><strong>Stay on track</strong><span>Small habits make a big difference.</span></div>
+    <button class="logout-btn" onclick="logout()">↪ <span>Log out</span></button>
+  </div>
+</aside>
+<main class="main">
+<header class="topbar">
+  <div>
+    <span class="eyebrow">PERSONAL FINANCE</span>
+    <h1 id="pageGreeting">Good morning</h1>
+  </div>
+  <div class="top-actions">
+    <button class="icon-btn" aria-label="Notifications">♧</button>
+    <a class="user-chip" href="profile.html"><span class="avatar" id="topAvatar">U</span><span id="topUserName">User</span><b>⌄</b></a>
+  </div>
+</header>
+
+<section class="form-layout">
+  <div class="panel intro-panel expense-intro"><span class="eyebrow">MONEY OUT</span><h2>Add expense</h2><p>Record everyday spending so your dashboard reflects where your money is going.</p><div class="big-symbol">↘</div></div>
+  <div class="panel form-panel"><div class="panel-head"><div><span class="eyebrow">NEW ENTRY</span><h2>Expense details</h2></div></div>
+    <form id="expenseForm" class="form-stack">
+      <label>Amount (₹)<input id="expenseAmount" type="number" min="1" placeholder="0.00" required></label>
+      <label>Category<select id="expenseCategory" required><option value="">Choose category</option><option>Food</option><option>Travel</option><option>Shopping</option><option>Bills</option><option>Education</option><option>Health</option><option>Entertainment</option><option>Other</option></select></label>
+      <label>Note<input id="expenseNote" type="text" placeholder="What did you spend on?" required></label>
+      <label>Date<input id="expenseDate" type="date" required></label>
+      <p id="expenseMessage" class="form-message"></p>
+      <button class="primary-btn" type="submit">Save expense <span>→</span></button>
+    </form>
+  </div>
+</section></main><script src="js/user.js"></script></body></html>

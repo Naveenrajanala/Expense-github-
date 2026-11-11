@@ -1,0 +1,8 @@
+if(localStorage.getItem("adminLoggedIn")!=="true") location.href="admin-login.html";
+function userEmails(){return (localStorage.getItem("expenseUserEmails")||"").split("\n").filter(Boolean)}
+function userKey(email,field){return "expenseUser_"+encodeURIComponent(email)+"_"+field}
+function users(){return userEmails().map(email=>{const tx=(localStorage.getItem(userKey(email,"transactions"))||"").split("\n").filter(Boolean).map(line=>{const p=line.split("|");return{id:Number(p[0]),type:p[1],amount:Number(p[2]),source:decodeURIComponent(p[3]||""),category:decodeURIComponent(p[4]||""),note:decodeURIComponent(p[5]||""),date:p[6]||"",account:decodeURIComponent(p[7]||"Cash")}});return{name:localStorage.getItem(userKey(email,"name"))||"",email,transactions:tx}})}
+function money(n){return "₹"+Number(n||0).toLocaleString("en-IN",{maximumFractionDigits:0})}
+function adminLogout(){localStorage.removeItem("adminLoggedIn");location.href="admin-login.html"}
+function renderUsers(){const us=users(),ul=document.getElementById("usersList");ul.innerHTML=us.length?us.map(u=>`<div class="user-row"><strong>${u.name||"User"}</strong><span>${u.email}</span><span>${(u.transactions||[]).length} records</span><button class="delete-btn" onclick="deleteUser('${u.email}')">Delete</button></div>`).join(""):`<div class="empty-state">No registered users.</div>`}
+function deleteUser(email){if(!confirm("Delete this user?"))return;let next=users().filter(u=>u.email!==email);localStorage.removeItem(userKey(email,"name"));localStorage.removeItem(userKey(email,"password"));localStorage.removeItem(userKey(email,"transactions"));localStorage.setItem("expenseUserEmails",next.map(u=>u.email).join("\n"));location.reload()}

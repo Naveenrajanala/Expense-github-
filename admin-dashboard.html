@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Expense Tracker — Admin</title><link rel="stylesheet" href="css/style.css"></head><body class="app-page">
+<aside class="sidebar">
+  <a class="side-brand" href="user-dashboard.html"><span class="brand-mark">ET</span><span>Expense<br>Tracker</span></a>
+  <nav>
+    <a href="admin-dashboard.html" class="nav-item active"><span>⌂</span> Overview</a>
+    <a href="admin-users.html" class="nav-item"><span>◯</span> Users</a>
+    <a href="admin-transactions.html" class="nav-item"><span>≡</span> Transactions</a>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="mini-help"><strong>Stay on track</strong><span>Small habits make a big difference.</span></div>
+    <button class="logout-btn" onclick="adminLogout()">↪ <span>Log out</span></button>
+  </div>
+</aside>
+<main class="main">
+<header class="topbar">
+  <div>
+    <span class="eyebrow">PERSONAL FINANCE</span>
+    <h1 id="pageGreeting">Good morning</h1>
+  </div>
+  <div class="top-actions">
+    <button class="icon-btn" aria-label="Notifications">♧</button>
+    <a class="user-chip" href="profile.html"><span class="avatar" id="topAvatar">U</span><span id="topUserName">User</span><b>⌄</b></a>
+  </div>
+</header>
+
+<section class="admin-hero"><div><span class="eyebrow">ADMIN MODULE</span><h2>System overview</h2><p class="muted">Monitor the local Expense Tracker records.</p></div><button class="secondary-btn" onclick="adminLogout()">Log out</button></section>
+<section class="admin-stats"><div class="admin-stat"><span>Users</span><strong id="totalUsers">0</strong></div><div class="admin-stat"><span>Transactions</span><strong id="totalTransactions">0</strong></div><div class="admin-stat"><span>Total income</span><strong id="totalIncome">₹0</strong></div><div class="admin-stat"><span>Total expenses</span><strong id="totalExpenses">₹0</strong></div></section>
+
+<section class="panel admin-users-panel">
+  <div class="panel-head">
+    <div>
+      <span class="eyebrow">USER MANAGEMENT</span>
+      <h2>Registered users</h2>
+    </div>
+    <a class="secondary-btn" href="admin-users.html">View all users →</a>
+  </div>
+  <div id="usersList" class="admin-table"></div>
+</section>
+</main><script src="js/admin.js"></script></body></html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Tracker — Sign Up</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+<div class="auth-shell">
+  <section class="auth-brand">
+    <div class="brand-mark">ET</div>
+    <span class="eyebrow">EXPENSE TRACKER</span>
+    <h1>Build better<br><span>money habits.</span></h1>
+    <p>Start tracking your everyday spending with a clean, focused dashboard.</p>
+    <div class="auth-orbit">
+      <div class="orbit-card"><small>This month</small><strong>₹24,580</strong><span>Under budget</span></div>
+      <div class="orbit-dot">+</div>
+    </div>
+  </section>
+  <section class="auth-card">
+    <div class="mobile-brand"><div class="brand-mark">ET</div><strong>Expense Tracker</strong></div>
+    <span class="eyebrow">GET STARTED</span>
+    <h2>Create account</h2>
+    <p class="muted">Your data stays in your browser.</p>
+    <form id="signupForm" class="form-stack">
+      <label>Full name<input id="signupName" type="text" placeholder="Your name" required></label>
+      <label>Email<input id="signupEmail" type="email" placeholder="you@example.com" required></label>
+      <label>Password<input id="signupPassword" type="password" placeholder="Create a password" required></label>
+      <p id="signupMessage" class="form-message"></p>
+      <button class="primary-btn" type="submit">Create account <span>→</span></button>
+    </form>
+    <p class="switch-text">Already have an account? <a href="index.html">Sign in</a></p>
+  </section>
+</div>
+<script src="js/auth.js"></script>
+</body>
+</html>
